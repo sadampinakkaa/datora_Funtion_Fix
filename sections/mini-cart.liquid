@@ -497,18 +497,21 @@
       {% assign savings = original | minus: discounted %}
 
       <div class="checkout-subtotal">          
-        <div class="checkout-subtotal-btn" hidden>
-          <span>{{ 'customer.orders.subtotal' | t }}</span>
-          <strong style="float: right;">{{ cart.original_total_price | money }}</strong>
-        </div>          
-
+                 
         {% if savings > 0 %}
-        <div>
-          <span>Ersparnis</span>
-          <strong style="float: right;">
-            -{{ savings | money }}
-          </strong>
-        </div>          
+          
+          <div class="checkout-subtotal-btn">
+            <span>{{ 'customer.orders.subtotal' | t }}</span>
+            <strong style="float: right;">{{ cart.original_total_price | money }}</strong>
+          </div> 
+          
+          <div>
+            <span>Ersparnis</span>
+            <strong style="float: right;">
+              -{{ savings | money }}
+            </strong>
+          </div>          
+          
         {% endif %}
 
         <div>
