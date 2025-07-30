@@ -454,7 +454,7 @@
         </button>
 
          <div class="applied-discounts-wrapper">
-          {% for discount in cart.discount_applications %}
+          {% for discount in cart.discount_applications limit:1 %}
             {% assign discount_code = discount.title | split: ' ' | first %}
             <div class="applied-discount">
               {{ discount_code }}
