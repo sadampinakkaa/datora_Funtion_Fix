@@ -427,6 +427,7 @@
       </div>
       <p class="error-msg">{{ 'shopify.discount_code_not_honoured' | t }}</p>
 
+      {% comment %}
       {%- if cart.cart_level_discount_applications != blank -%}
         <ul class="mini-cart__discount-list list--unstyled" role="list">
           {%- for discount_application in cart.cart_level_discount_applications -%}
@@ -439,8 +440,8 @@
           {%- endfor -%}
         </ul>
       {%- endif -%}
+      {% endcomment %}
 
-      {% comment %}
       {%- if section.settings.show_order_note or shipping_tax_note != '' -%}
         <div class="mini-cart__actions text--subdued text--xsmall">
           {%- if section.settings.show_order_note -%}
@@ -458,7 +459,6 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      {% endcomment %}
 
       {% comment %}
       <span class="DrawerShippingAnnoucement">
