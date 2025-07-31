@@ -440,6 +440,7 @@
         </ul>
       {%- endif -%}
 
+      {% comment %}
       {%- if section.settings.show_order_note or shipping_tax_note != '' -%}
         <div class="mini-cart__actions text--subdued text--xsmall">
           {%- if section.settings.show_order_note -%}
@@ -457,6 +458,7 @@
           {%- endif -%}
         </div>
       {%- endif -%}
+      {% endcomment %}
 
       {% comment %}
       <span class="DrawerShippingAnnoucement">
