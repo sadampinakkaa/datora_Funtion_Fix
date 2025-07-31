@@ -430,30 +430,14 @@
 
       
       <div class="datora-discount-field-container">
-        <div class="input datora-input">
-          {% comment %}
-          <input type="text" form="datora-form" id="datora-discount" name="datora-discount" class="input__field input__field--text">
-          <label for="datora-discount" class="input__label">{{ 'shopify.checkout.order_summary.discount_label' | t }}</label>
-
-          <button type="submit" class="input__submit-icon tap-area" title="{{ 'shopify.checkout.order_summary.discount_title' | t }}">
-            {%- render 'icon', icon: 'discount-badge' -%}
-          </button>
-          {% endcomment %} 
-
-          <input type="text" name="datora-discount" id="datora-discount-input" class="input__field input__field--text">
-          <label for="datora-discount" class="input__label">{{ 'shopify.checkout.order_summary.discount_label' | t }}</label>
+        <div class="datora-discount-field-input"
+          <div class="input datora-input">
+            <input type="text" name="datora-discount" id="datora-discount-input" class="input__field input__field--text">
+            <label for="datora-discount" class="input__label">{{ 'shopify.checkout.order_summary.discount_label' | t }}</label>
+          </div>
+          <button type="button" onclick="applyDatoraDiscount()" class="datora-submit button button--primary">{{ 'shopify.checkout.general.submit' | t }}</button>
         </div>
-
-        <button type="button" onclick="applyDatoraDiscount()" class="datora-submit button button--primary">{{ 'shopify.checkout.general.submit' | t }}</button>
-        <button form="datora-form" type="submit" class="datora-submit button button--primary hidden" title="{{ 'shopify.checkout.general.submit' | t }}">
-          <span class="datora-submit__text">{{ 'shopify.checkout.general.submit' | t }}</span>
-          <span class="datora-submit__spinner line-item__loader">
-            <span class="line-item__loader-spinner spinner">{% render 'icon' with 'spinner', width: 16, height: 16, stroke_width: 6 %}</span>
-            <span class="line-item__loader-mark">{% render 'icon' with 'check', width: 20, height: 20 %}</span>
-          </span>
-        </button>
-
-         <div class="applied-discounts-wrapper">
+        <div class="applied-discounts-wrapper">
           {% for discount in cart.discount_applications limit:1 %}
             {% assign discount_code = discount.title | split: ' ' | first %}
             <div class="applied-discount">
@@ -468,7 +452,6 @@
             </div>
           {% endfor %}
         </div>
-        
       </div>
 
       
