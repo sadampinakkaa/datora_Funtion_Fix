@@ -401,34 +401,6 @@
     <footer class="mini-cart__drawer-footer drawer__footer drawer__footer--tight drawer__footer--bordered">
       {%- capture shipping_tax_note -%}{{ 'cart.general.shipping_tax_note' | t }}{%- endcapture -%}
 
-      {%- if cart.cart_level_discount_applications != blank -%}
-        <ul class="mini-cart__discount-list list--unstyled" role="list">
-          {%- for discount_application in cart.cart_level_discount_applications -%}
-            {% if discount_application.total_allocated_amount > 0 %}
-              <li class="mini-cart__discount">
-                <span class="mini-cart__discount-badge discount-badge">{%- render 'icon' with 'discount-badge' -%}{{ discount_application.title }}</span>
-                <span class="mini-cart__discount-price text--xsmall text--subdued">-{{ discount_application.total_allocated_amount | money }}</span>
-              </li>
-            {% endif %}
-          {%- endfor -%}
-        </ul>
-      {%- endif -%}
-
-
-
-
-      {% comment %}
-      <span class="DrawerShippingAnnoucement">
-        <p class="DrawerShippingAnnoucement--head">Versand</p>
-        <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
-      </span>
-      {% endcomment %}
-      <span class="DrawerShippingAnnoucement">
-        <p class="DrawerShippingAnnoucement--head">Umtausch</p>
-        <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
-      </span>
-
-      
       <div class="datora-discount-field-container">
         <div class="datora-discount-field-input">
           <div class="input datora-input">
@@ -453,9 +425,31 @@
           {% endfor %}
         </div>
       </div>
-
-      
       <p class="error-msg">{{ 'shopify.discount_code_not_honoured' | t }}</p>
+
+      {%- if cart.cart_level_discount_applications != blank -%}
+        <ul class="mini-cart__discount-list list--unstyled" role="list">
+          {%- for discount_application in cart.cart_level_discount_applications -%}
+            {% if discount_application.total_allocated_amount > 0 %}
+              <li class="mini-cart__discount">
+                <span class="mini-cart__discount-badge discount-badge">{%- render 'icon' with 'discount-badge' -%}{{ discount_application.title }}</span>
+                <span class="mini-cart__discount-price text--xsmall text--subdued">-{{ discount_application.total_allocated_amount | money }}</span>
+              </li>
+            {% endif %}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {% comment %}
+      <span class="DrawerShippingAnnoucement">
+        <p class="DrawerShippingAnnoucement--head">Versand</p>
+        <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
+      </span>
+      {% endcomment %}
+      <span class="DrawerShippingAnnoucement">
+        <p class="DrawerShippingAnnoucement--head">Umtausch</p>
+        <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
+      </span>
 
       {%- if section.settings.show_order_note or shipping_tax_note != '' -%}
         <div class="mini-cart__actions text--subdued text--xsmall">
