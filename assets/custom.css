@@ -13,10 +13,14 @@
 }
 
 /* Datora */
-.datora-discount-field-container {
+  .datora-discount-field-container {
 	display: flex;
-	align-items: flex-start;
-	flex-wrap: wrap;
+	flex-direction: column;
+  }
+
+  .datora-discount-field-input {
+	display: flex;
+	flex-direction: row;
   }
 
   .applied-discounts-wrapper{
