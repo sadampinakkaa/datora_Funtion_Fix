@@ -440,17 +440,6 @@
         </ul>
       {%- endif -%}
 
-      {% comment %}
-      <span class="DrawerShippingAnnoucement">
-        <p class="DrawerShippingAnnoucement--head">Versand</p>
-        <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
-      </span>
-      {% endcomment %}
-      <span class="DrawerShippingAnnoucement">
-        <p class="DrawerShippingAnnoucement--head">Umtausch</p>
-        <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
-      </span>
-
       {%- if section.settings.show_order_note or shipping_tax_note != '' -%}
         <div class="mini-cart__actions text--subdued text--xsmall">
           {%- if section.settings.show_order_note -%}
@@ -468,6 +457,17 @@
           {%- endif -%}
         </div>
       {%- endif -%}
+
+      {% comment %}
+      <span class="DrawerShippingAnnoucement">
+        <p class="DrawerShippingAnnoucement--head">Versand</p>
+        <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
+      </span>
+      {% endcomment %}
+      <span class="DrawerShippingAnnoucement">
+        <p class="DrawerShippingAnnoucement--head">Umtausch</p>
+        <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
+      </span>
 
       {% assign original = cart.original_total_price %}
       {% assign discounted = cart.total_price %}
