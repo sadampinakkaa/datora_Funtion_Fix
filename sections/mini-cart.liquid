@@ -465,17 +465,22 @@
         <p class="DrawerShippingAnnoucement--head">Versand</p>
         <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
       </span>
-      {% endcomment %}
       <span class="DrawerShippingAnnoucement">
         <p class="DrawerShippingAnnoucement--head">Umtausch</p>
         <p class="DrawerShippingAnnoucement--Content" style="    color: #008b10;">Kostenlos</p>
       </span>
+      {% endcomment %}
 
       {% assign original = cart.original_total_price %}
       {% assign discounted = cart.total_price %}
       {% assign savings = original | minus: discounted %}
 
-      <div class="checkout-subtotal">          
+      <div class="checkout-subtotal"> 
+
+        <div class="checkout-subtotal-btn">
+          <span>Umtausch</span>
+          <strong style="float: right; color: #008b10;">Kostenlos</strong>
+        </div>
                  
         {% if savings > 0 %}
           
