@@ -553,6 +553,7 @@
       "blocks": {
         "b101c8b2-8207-4460-9097-f7632302f57e": {
           "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
           "settings": {
             "only_photos": false,
             "aggregated": true,
